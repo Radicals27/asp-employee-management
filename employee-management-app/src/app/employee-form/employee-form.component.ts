@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Employee } from '../../models/employee';
+import { EmployeeService } from '../employee.service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-employee-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './employee-form.component.html',
   styleUrl: './employee-form.component.css'
 })
 
-export class EmployeeFormComponent {
+export class EmployeeFormComponent implements OnInit {
   employee: Employee = {
     id: 0,
     firstName: '',
@@ -20,10 +23,37 @@ export class EmployeeFormComponent {
     position: ''
   }
 
+  isEditing: boolean = false;
+
+  errorMessage: string = "";
+
+  constructor(private employeeService: EmployeeService, 
+    private router: Router,
+    private route: ActivatedRoute,
+    ) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((result) => {
+      const id = result.get('id');
+      if(id != null) {
+        this.isEditing = true;   // If there is a employee ID param, we are editing one.
+      }
+    });
+  }
+
   onSubmit() : void {
     console.log(this.employee);
 
     // Logic to create a new employee here
-    
+    this.employeeService.createEmployee(this.employee)
+    .subscribe({
+      next: (response) => {
+        this.router.navigate(['/']);  // Navigate to home page on successful creation
+      },
+      error: (err) => {
+        console.error(err);
+        this.errorMessage = `Error occured: ${err.status}`;
+      }
+    });
   }
 }
