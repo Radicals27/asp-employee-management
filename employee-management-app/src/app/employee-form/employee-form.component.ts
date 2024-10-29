@@ -34,26 +34,44 @@ export class EmployeeFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((result) => {
+
       const id = result.get('id');
+
       if(id != null) {
         this.isEditing = true;   // If there is a employee ID param, we are editing one.
+        this.employeeService.getEmployeeById(Number(id)).subscribe({
+          next: (result) => this.employee = result,
+          error: (err) => this.errorMessage = `Error occured: ${err.status}`
+        });
       }
     });
   }
 
   onSubmit() : void {
-    console.log(this.employee);
-
-    // Logic to create a new employee here
-    this.employeeService.createEmployee(this.employee)
-    .subscribe({
-      next: (response) => {
-        this.router.navigate(['/']);  // Navigate to home page on successful creation
-      },
-      error: (err) => {
-        console.error(err);
-        this.errorMessage = `Error occured: ${err.status}`;
-      }
-    });
+    
+    if(this.isEditing) {  // Edit an employee
+      this.employeeService.editEmployee(this.employee)
+      .subscribe({
+        next: (response) => {
+          this.router.navigate(['/']);  // Navigate to home page on successful creation
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during edit: ${err.status}`;
+        }
+      });
+    }
+    else {  // Create a new employee
+      this.employeeService.createEmployee(this.employee)
+      .subscribe({
+        next: (response) => {
+          this.router.navigate(['/']);  // Navigate to home page on successful creation
+        },
+        error: (err) => {
+          console.error(err);
+          this.errorMessage = `Error occured during create: ${err.status}`;
+        }
+      });
+    }
   }
 }
