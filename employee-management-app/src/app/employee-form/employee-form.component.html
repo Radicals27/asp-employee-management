@@ -1,29 +1,29 @@
-<h2>{{isEditing? 'Edit' : 'Create'}} Employee</h2>
+<h2 class="text-center my-5">{{isEditing? 'Edit' : 'Create'}} Employee</h2>
 
 <div *ngIf="errorMessage != ''">
     {{errorMessage}}
 </div>
 
-<form (ngSubmit)="onSubmit()">
-    <div>
-        <label>First Name</label>
-        <input type="text" name="firstName" [(ngModel)]="employee.firstName"/>
+<form (ngSubmit)="onSubmit()" class="border rounded p-5 w-50 mb-5 mx-auto">
+    <div class="mb-3">
+        <label class="form-label">First Name</label>
+        <input class="form-control" type="text" name="firstName" [(ngModel)]="employee.firstName"/>
     </div>
-    <div>
-        <label>Last Name</label>
-        <input type="text" name="lastName" [(ngModel)]="employee.lastName"/>
+    <div class="mb-3">
+        <label class="form-label">Last Name</label>
+        <input class="form-control" type="text" name="lastName" [(ngModel)]="employee.lastName"/>
     </div>
-    <div>
-        <label>Phone</label>
-        <input type="phone" name="phone" [(ngModel)]="employee.phone"/>
+    <div class="mb-3">
+        <label class="form-label">Phone</label>
+        <input class="form-control" type="phone" name="phone" [(ngModel)]="employee.phone"/>
     </div>
-    <div>
-        <label>Email</label>
-        <input type="email" name="email" [(ngModel)]="employee.email"/>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input class="form-control" type="email" name="email" [(ngModel)]="employee.email"/>
     </div>
-    <div>
-        <label>Position</label>
-        <input type="text" name="position" [(ngModel)]="employee.position"/>
+    <div class="mb-3">
+        <label class="form-label">Position</label>
+        <input class="form-control" type="text" name="position" [(ngModel)]="employee.position"/>
     </div>
-    <button type="submit">{{isEditing? 'Edit' : 'Create'}} </button>
+    <button class="btn btn-primary m-1" type="submit">{{isEditing? 'Edit' : 'Create'}} </button>
 </form>

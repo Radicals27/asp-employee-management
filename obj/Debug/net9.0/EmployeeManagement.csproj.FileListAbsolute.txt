@@ -38,3 +38,9 @@ D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\bin\D
 D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\obj\Debug\net9.0\EmployeeManagement.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\obj\Debug\net9.0\EmployeeManagement.sourcelink.json
+D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\bin\Debug\net9.0\employee-management-app\angular.json
+D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\bin\Debug\net9.0\employee-management-app\package-lock.json
+D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\bin\Debug\net9.0\employee-management-app\package.json
+D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\bin\Debug\net9.0\employee-management-app\tsconfig.app.json
+D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\bin\Debug\net9.0\employee-management-app\tsconfig.json
+D:\Projects\ASP NET Projects\Employee Management System\EmployeeManagement\bin\Debug\net9.0\employee-management-app\tsconfig.spec.json
