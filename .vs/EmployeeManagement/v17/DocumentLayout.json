@@ -48,7 +48,7 @@
               "RelativeDocumentMoniker": "Controllers\\EmployeeController.cs",
               "ToolTip": "D:\\Projects\\ASP NET Projects\\Employee Management System\\EmployeeManagement\\Controllers\\EmployeeController.cs",
               "RelativeToolTip": "Controllers\\EmployeeController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAswEMAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAswEMAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-24T22:38:21.186Z",
               "EditorCaption": ""
@@ -63,8 +63,7 @@
               "RelativeToolTip": "Models\\Employee.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T21:22:40.202Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T21:22:40.202Z"
             },
             {
               "$type": "Document",
